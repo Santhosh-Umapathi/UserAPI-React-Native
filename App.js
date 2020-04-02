@@ -66,14 +66,12 @@ export default class HomeScreen extends Component {
                       style={styles.profilepic}
                     />
                   </View>
-                </CardItem>
-                <CardItem>
                   <View style={styles.userInfo}>
                     <Text style={{fontSize: 25}}>
                       {item.name.first} {item.name.last}
                     </Text>
                     <Text style={{fontSize: 18, color:'gray'}}>
-                      {item.email} ,{item.phone}
+                      {item.email} {item.phone}
                     </Text>
                   </View>
                 </CardItem>
