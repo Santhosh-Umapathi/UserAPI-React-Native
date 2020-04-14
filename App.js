@@ -12,21 +12,19 @@ export default class HomeScreen extends Component {
     }
   }
 
-
   componentDidMount() {
     this.getAllUsers();
   }
 
-
-
+  //API Call to fetch data
   getAllUsers = () => {
     return (
       fetch("https://randomuser.me/api/?results=50") 
-        .then(response => response.json())
+        .then(response => response.json()) //Converting response into JSON
         .then(responseJSON => {
           this.setState({
             isLoading: false,
-            dataSource: this.state.dataSource.concat(responseJSON.results)
+            dataSource: this.state.dataSource.concat(responseJSON.results) //Adding/merging data into array
           })
           console.log(this.state.dataSource)
         })
@@ -34,13 +32,6 @@ export default class HomeScreen extends Component {
     )
   }
   
-
-
-
-
-
-
-
   render() {
     if (this.state.isLoading === true)
     {
@@ -88,9 +79,8 @@ const styles = StyleSheet.create(
     containerView:
     {
       flex: 1,
-    justifyContent: 'center',
+      justifyContent: 'center',
       marginTop: 80
-      //alignItems:"center"
     },
     profilepic:
     {
@@ -105,5 +95,4 @@ const styles = StyleSheet.create(
       flex: 5,
       flexDirection: 'column'
     }
-  
 });
